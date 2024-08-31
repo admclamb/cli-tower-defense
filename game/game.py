@@ -27,11 +27,11 @@ class Game:
             self.handle_user_input_pre_round()
 
     def handle_user_input_pre_round(self):
-        action = input("Enter action (place, start_round, quit): ").strip().lower()
-        if action == "start_round":
+        action = input("Enter action (place (p), start round (s), quit (q)): ").strip().lower()
+        if action == "s":
             self.status = GameStatus.RUNNING
             print(f"Wave {self.wave_number + 1} starting!")
-        elif action == "quit":
+        elif action == "quit" or action == "q":
             self.status = GameStatus.GAME_OVER
             self.round_status = RoundStatus.GAME_OVER
             print("Thanks for playing!")
