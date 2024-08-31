@@ -1,5 +1,5 @@
 class Matrix:
-    def __init__(self, rows: int, cols: int, default_value=None):
+    def __init__(self, rows: int, cols: int, default_value=None) -> None:
         self.rows = rows
         self.cols = cols
         self.default_value = default_value
@@ -27,3 +27,7 @@ class Matrix:
         if self.is_within_bounds(x, y):
             return self.grid[x][y]
         return self.default_value
+    
+    def display(self):
+        for row in self.grid:
+            print(" ".join([str(item) if item else "." for item in row]))
