@@ -1,2 +1,2 @@
 class GameConfig:
-    size = (25, 25)
+    size = (15, 30)

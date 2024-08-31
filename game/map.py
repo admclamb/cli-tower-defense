@@ -13,4 +13,4 @@ class Map:
         return self.matrix.is_occupied(x, y)
     
     def display(self) -> None:
-        print(self.matrix.display)
+        print(self.matrix.display())

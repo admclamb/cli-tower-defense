@@ -15,7 +15,7 @@ class Game:
         self.status = GameStatus.RUNNING
 
     def loop(self):
-        while self.start == GameStatus.RUNNING:
+        while self.status == GameStatus.RUNNING:
             self.map.display()
             if self.round_status == RoundStatus.PRE_ROUND:
                 self.pre_round_phase()
@@ -23,7 +23,7 @@ class Game:
 
     def pre_round_phase(self):
         print("Pre-round phase: Set your towers and walls.")
-        while self.status == GameStatus.PRE_ROUND:
+        while self.round_status == RoundStatus.PRE_ROUND:
             self.handle_user_input_pre_round()
 
     def handle_user_input_pre_round(self):
@@ -33,4 +33,5 @@ class Game:
             print(f"Wave {self.wave_number + 1} starting!")
         elif action == "quit":
             self.status = GameStatus.GAME_OVER
+            self.round_status = RoundStatus.GAME_OVER
             print("Thanks for playing!")
