@@ -1,13 +1,13 @@
 from game.game_config import GameConfig
 from game.game_status import GameStatus
-from game.map import Map
+from game.map.map import Map
 from game.round_status import RoundStatus
 
 
 class Game:
     def __init__(self, config: GameConfig) -> None:
         self.config = config
-        self.map = Map(self.config.size)
+        self.map = Map(self.config)
         self.status = GameStatus.INITIALIZED
         self.round_status = RoundStatus.PRE_ROUND
 

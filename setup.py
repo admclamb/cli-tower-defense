@@ -11,7 +11,7 @@ setup(
     long_description=long_description,
     author="Anthony Mclamb",
     author_email="adylanmclamb@gmail.com",
-    packages=["game"],
+    packages=["game", "game.map"],
     extras_require={
         'dev': [
             'pytest==8.3.2',
