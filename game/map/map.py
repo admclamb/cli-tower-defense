@@ -28,10 +28,6 @@ class Map:
         return self.matrix.is_occupied(x, y)
     
     def display(self) -> None:
-        # Print the x-axis labels (numbers)
-        x_labels = [f"{i+1:2}" for i in range(self.size[1])]
-        print("  " + " ".join(x_labels))
-
-        for y, row in enumerate(self.matrix.iterate_rows(), start=1):
+        for row in self.matrix.iterate_rows():
             row_display = " ".join([f"{square.display():^2}" if square is not None else "  " for square in row])
-            print(f"{y:2} {row_display}")
+            print(row_display)
